@@ -23,7 +23,7 @@ namespace WpfApp1
 
         private void HelloWorldButton_Click(object sender, RoutedEventArgs e)
         {
-
+            HelloWorldButton.Content = "Hello, World!";
         }
     }
 }
