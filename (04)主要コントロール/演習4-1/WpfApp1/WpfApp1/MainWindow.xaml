@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 上部：ロゴとタイトル -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+
+            <!-- Image: アプリロゴ -->
+            <Image x:Name="LogoImage" Width="40" Height="40" Margin="0,0,10,0"/>
+
+            <!-- Label: アプリタイトル -->
+            <Label Content="リスト型メモ帳アプリ" FontSize="18" FontWeight="Bold" 
+                VerticalAlignment="Center"/>
+
+        </StackPanel>
+
+        <!-- TabControl: メインエリア -->
+        <TabControl Grid.Row="1">
+
+            <!-- メモ入力・表示タブ -->
+            <TabItem Header="メモ">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 入力エリア -->
+                    <StackPanel Grid.Row="0" Margin="0,0,0,10">
+
+                        <!-- Label: 入力ラベル -->
+                        <Label Content="新しいメモ:" FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <!-- TextBox: メモ入力 -->
+                            <TextBox x:Name="MemoTextBox" Width="180" Margin="0,0,10,0" 
+                                  Text="ここにメモを入力"/>
+
+                            <!-- ComboBox: カテゴリ選択 -->
+                            <ComboBox x:Name="CategoryComboBox" Width="70" Margin="0,0,10,0">
+                                <ComboBoxItem Content="仕事" IsSelected="True"/>
+                                <ComboBoxItem Content="個人"/>
+                                <ComboBoxItem Content="買い物"/>
+                            </ComboBox>
+
+                            <!-- Button: 追加ボタン -->
+                            <Button Content="追加" Click="OnAddButtonClick"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <!-- ListView: メモ一覧 -->
+                    <ListView x:Name="MemoListView" Grid.Row="1">
+                        <ListViewItem Content="サンプルメモ1 (仕事)"/>
+                        <ListViewItem Content="サンプルメモ2 (個人)"/>
+                    </ListView>
+
+                </Grid>
+            </TabItem>
+
+            <!-- 設定タブ -->
+            <TabItem Header="設定">
+                <StackPanel Margin="20">
+
+                    <!-- Label: 設定タイトル -->
+                    <Label Content="アプリ設定" FontSize="14" FontWeight="Bold"/>
+
+                    <CheckBox Content="起動時にメモを自動読み込み" IsChecked="True" Margin="0,10,0,5"/>
+                    <CheckBox Content="終了時に確認ダイアログを表示" IsChecked="False" Margin="0,5,0,10"/>
+
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>
