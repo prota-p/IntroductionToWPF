@@ -21,10 +21,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-
-            // ロゴ画像のパスを設定
-            string path = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "images/logo.png");
-            LogoImage.Source = new BitmapImage(new Uri(path));
         }
 
         // イベントハンドラ: ボタンがクリックされたときに呼び出される
