@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="10">
+
+        <!-- タイトル -->
+        <TextBlock Text="データバインディング基礎デモ" 
+                   FontSize="16" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        <!-- 人物情報エリア -->
+        <GroupBox Header="人物情報" Margin="0,0,0,10">
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, StringFormat='名前: {0}'}"/>
+                <TextBlock Text="{Binding Age, StringFormat='年齢: {0}'}"/>
+                <TextBlock Text="{Binding Job, StringFormat='職業: {0}'}"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- 会社情報エリア -->
+        <GroupBox x:Name="CompanyGroup" Header="会社情報">
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, StringFormat='会社名: {0}'}"/>
+                <TextBlock Text="{Binding Department, StringFormat='部署: {0}'}"/>
+            </StackPanel>
+        </GroupBox>
+
+    </StackPanel>
+</Window>
