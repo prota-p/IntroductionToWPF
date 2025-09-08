@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfCounterApp.Views.CounterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCounterApp"
+        mc:Ignorable="d"
+        Title="CounterWindow" Height="450" Width="800">
+    <StackPanel Margin="20" VerticalAlignment="Center">
+        <!-- カウンター表示 -->
+        <TextBlock Text="{Binding Count, StringFormat='Count: {0}'}" 
+               FontSize="24" 
+               HorizontalAlignment="Center" 
+               Margin="0,0,0,20"/>
+
+        <!-- ボタン群 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="－" 
+                Command="{Binding DecrementCommand}" 
+                Width="40" Height="30"/>
+            <Button Content="＋" 
+                Command="{Binding IncrementCommand}" 
+                Width="40" Height="30"/>
+        </StackPanel>
+
+        <!-- 説明テキスト -->
+        <TextBlock Text="「－」ボタンは0以下で自動無効化されます" 
+               HorizontalAlignment="Center" 
+               Margin="0,15,0,0" />
+    </StackPanel>
+</Window>
