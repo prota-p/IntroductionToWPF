@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfCounterApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCounterApp"
+        xmlns:views="clr-namespace:WpfCounterApp.Views"
+        mc:Ignorable="d"
+        Title="CounterWindow" Height="450" Width="800">
+    <StackPanel Margin="20" VerticalAlignment="Center">
+        <views:CounterView x:Name="CounterView" Margin="0,0,0,20"/>
+
+        <Separator Margin="20,0" Background="LightGray" Height="1"/>
+
+        <views:EvenOddView x:Name="EvenOddView" Margin="0,20,0,0"/>
+    </StackPanel>
+</Window>
