@@ -38,14 +38,12 @@ namespace WpfCounterApp.ViewModels
         private void ExecuteIncrement()
         {
             _model.Increment();
-            OnPropertyChanged(nameof(Count));
             _storage.Save(_model.Value);
         }
 
         private void ExecuteDecrement()
         {
             _model.Decrement();
-            OnPropertyChanged(nameof(Count));
             _storage.Save(_model.Value);
         }
 
